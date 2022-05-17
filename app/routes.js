@@ -5,6 +5,11 @@ const IncoContext = require('./classes/inco_context');
 // Add your routes here - above the module.exports line
 
 
+// Root
+router.get(['/'], function (req, res) {
+    res.redirect("/mode_of_transport")
+});
+
 // Form handler
 router.get(['/form_handler/'], function (req, res) {
     var inco_context = new IncoContext(req, res);
