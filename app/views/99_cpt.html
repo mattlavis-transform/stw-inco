@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  CPT (Carriage Paid To) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">CPT (Carriage Paid To)</h1>
+            <p>The seller is responsible for loading the goods on the vessel chosen by the buyer, clearing the goods for export at the port/airport of loading, and paying freight costs to the named destination. The risk passes to the buyer once the goods are loaded on the first carrier.
+                CPT can be used for any means of transport and should replace CFR when shipping containerised cargo.
+            </p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

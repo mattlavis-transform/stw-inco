@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  DPU (Delivered at Place Unloaded) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">DPU (Delivered at Place Unloaded)</h1>
+            <p>Under this term, the seller bears the cost, risk and responsibility until the goods are unloaded at a named place. The named place can be an air cargo depot, quay, container port, rail port, warehouse or any agreed place between both parties. This is the only term that requires the seller to unload the goods, but customs clearance is still the responsibility of the buyer.</p>
+            <p>This term was previously named Delivered at Terminal (DAT), but was changed for Incoterms 2020 as buyers and sellers often want goods delivered somewhere other than a terminal.
+            </p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  CIP (Carrier and Insurance Paid) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">CIP (Carrier and Insurance Paid)</h1>
+            <p>The seller pays for the carriage and insurance to the named destination port, clears the goods for export at the port or airport of loading, and arranges insurance to a minimum of “Clause A”. CIP can be used for any means of transport, but the risk passes to the buyer when the goods are handed to the first carrier.</p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

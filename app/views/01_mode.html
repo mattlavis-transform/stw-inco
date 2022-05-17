@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What mode of transport do you plan to use? - Incoterms selector
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <form action="/form_handler" method="get">
+                <input type="hidden" name="phase" id="phase" value="mode_of_transport">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Incoterms selector</span>
+                                What mode of transport do you plan to use?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="mode_of_transport-air" name="mode_of_transport" type="radio" value="air">
+                                <label class="govuk-label govuk-radios__label" for="mode_of_transport-air">Air</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="mode_of_transport-inland_water" name="mode_of_transport" type="radio" value="inland_water">
+                                <label class="govuk-label govuk-radios__label" for="mode_of_transport-inland_water">Inland water</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="mode_of_transport-land" name="mode_of_transport" type="radio" value="land">
+                                <label class="govuk-label govuk-radios__label" for="mode_of_transport-land">Land</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="mode_of_transport-rail" name="mode_of_transport" type="radio" value="rail">
+                                <label class="govuk-label govuk-radios__label" for="mode_of_transport-rail">Rail</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="mode_of_transport-sea" name="mode_of_transport" type="radio" value="sea">
+                                <label class="govuk-label govuk-radios__label" for="mode_of_transport-sea">Sea</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Where in the buyer's country? - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <form action="/form_handler" method="get">
+                    <input type="hidden" name="phase" id="phase" value="buyers_country_location">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Incoterms selector</span>
+                                Where in the buyer's country?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="buyers_country_location-port_of_destination" name="buyers_country_location" type="radio" value="port_of_destination">
+                                <label class="govuk-label govuk-radios__label" for="buyers_country_location-port_of_destination">Port of destination</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="buyers_country_location-other_locations" name="buyers_country_location" type="radio" value="other_locations">
+                                <label class="govuk-label govuk-radios__label" for="buyers_country_location-other_locations">Other locations</label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="buyers_country_location-buyers_premises" name="buyers_country_location" type="radio" value="buyers_premises">
+                                <label class="govuk-label govuk-radios__label" for="buyers_country_location-buyers_premises">Buyer's premises</label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

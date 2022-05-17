@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  CIF (Cost, Insurance & Freight) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">CIF (Cost, Insurance & Freight)</h1>
+            <p>Just as the above, except in this case, the seller is also responsible for arranging and paying for the insurance. Incoterms 2020 states that CIF comes with the basic level of insurance, classed as “Clause C”, and should only be used for conventional sea freight.</p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

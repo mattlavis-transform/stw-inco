@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  FCA (Free Carrier) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">FCA (Free Carrier)</h1>
+
+            <h2 class="govuk-heading-m">Seller’s Premises</h2>
+            <p>As outlined above, this term should be used instead of EXW (Ex Works), which is widely misused for exports. Under this term, the seller bears all risks and costs up to and including loading the goods onto the vehicle at their premises. The seller also has an obligation to arrange export documentation and clear export customs. If used for ocean freight, the seller can obtain a bill of lading.</p>
+
+            <h2 class="govuk-heading-m">Named Place</h2>
+            <p>The seller pays the transport costs within their own country up to unloading at a named place, while also having responsibility for export documentation and customs procedures. A bill of lading can be obtained by the seller for ocean freight. This term can be used for all modes of transport, and the ICC recommends that it replaces FOB (Free on Board) when goods are not being moved by conventional sea freight.</p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

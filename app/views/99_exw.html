@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  EXW (Ex Works) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">EXW (Ex Works)</h1>
+            <p>The seller is only responsible for making the goods ready for collection at a named premises, which could be their warehouse or another named location. The buyer is then responsible for the shipment from that point, including loading the goods, export documentation and clearance, payment of transportation costs, and movement of goods to the final destination.</p>
+            <p>The ICC has recommended that EXW only be used for domestic trade as it is difficult for an overseas buyer to complete export documentation in the country of supply. For overseas trade, FCA (Free Carrier) Seller’s Premises should be used instead of EXW.
+            </p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

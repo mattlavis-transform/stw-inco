@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  FOB (Free on Board) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">FOB (Free on Board)</h1>
+            <p>The seller is responsible for loading the goods on board the vessel that has been nominated by the buyer, and also bears responsibility for export and customs duties. Once the goods are on board the ship, the cost and risk for the goods are divided between the two parties. The ICC advises that FOB should only be used for conventional sea freight, with FCA Named Place used for all other modes of transport, including containerised sea freight.
+            </p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

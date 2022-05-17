@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where in the seller's country? - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <form action="/form_handler" method="get">
+                    <input type="hidden" name="phase" id="phase" value="sellers_country_location">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Incoterms selector</span>
+                                Where in the seller's country?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sellers_country_location-sellers_premises" name="sellers_country_location" type="radio" value="sellers_premises">
+                                <label class="govuk-label govuk-radios__label" for="sellers_country_location-sellers_premises">Seller's premises</label>
+                            </div>
+                            {% if inco_context.is_water %}
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="sellers_country_location-port_of_load" name="sellers_country_location" type="radio" value="port_of_load">
+                                    <label class="govuk-label govuk-radios__label" for="sellers_country_location-port_of_load">Port of load</label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="sellers_country_location-onboard" name="sellers_country_location" type="radio" value="onboard">
+                                    <label class="govuk-label govuk-radios__label" for="sellers_country_location-onboard">On board</label>
+                                </div>
+                            {% endif %}
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sellers_country_location-other" name="sellers_country_location" type="radio" value="other">
+                                <label class="govuk-label govuk-radios__label" for="sellers_country_location-other">Other locations</label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

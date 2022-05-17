@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  FOB (Free on Board) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">CFR (Cost and Freight)</h1>
+            <p>The seller pays the costs and freight for transporting the goods to the named destination port. However, the risk is transferred to the buyer once the goods have been loaded onto the ship. According to the ICC, this term should only be used for conventional sea freight. It isn’t appropriate for containerised cargo, which is better covered by CPT (Carriage Paid To).
+            </p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}

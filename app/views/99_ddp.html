@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  DDP (Delivered Duty Paid) - Incoterms selector
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+        text: "Back",
+        href: inco_context.back_link
+    }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Incoterms selector</span>
+            <h1 class="govuk-heading-xl">DDP (Delivered Duty Paid)</h1>
+            <p>The seller is responsible for all the costs and risks associated with delivering the goods to the named destination in the country of the buyer, including import duties and taxes. The buyer’s only responsibility is unloading the goods. While Ex Works (EWX) represents the minimum obligation for the seller, DDP represents the maximum obligation for the seller. It’s worth noting that DDP trade is not always possible in certain countries.
+            </p>
+
+            {{ govukButton({
+                text: "Start again",
+                href: "/mode_of_transport"
+            }) }}
+        </div>
+    </div>
+
+{% endblock %}
