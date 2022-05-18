@@ -4,25 +4,57 @@
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
+	{{ govukBackLink({
         text: "Back",
         href: inco_context.back_link
     }) }}
 {% endblock %}
 
 {% block content %}
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <span class="govuk-caption-xl">Incoterms selector</span>
-            <h1 class="govuk-heading-xl">CIF (Cost, Insurance & Freight)</h1>
-            <p>Just as the above, except in this case, the seller is also responsible for arranging and paying for the insurance. Incoterms 2020 states that CIF comes with the basic level of insurance, classed as “Clause C”, and should only be used for conventional sea freight.</p>
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+			<span class="govuk-caption-xl">Incoterms selector</span>
+			<h1 class="govuk-heading-xl">CIF (Cost, Insurance & Freight)</h1>
+			<p>Under CIF (short for “Cost, Insurance and Freight”), the seller delivers the goods, cleared for export, onboard the vessel at the port of shipment, pays for the transport of the goods to the port of destination, and also obtains and pays for minimum insurance coverage on the goods through their journey to the named port of destination.</p>
 
-            {{ govukButton({
+			<p>The buyer assumes all risk once the goods are on board the vessel for the main carriage; however, they don’t take on any costs until the freight arrives at the named port of destination.</p>
+
+			<p>CIF applies to ocean or inland waterway transport only. It is commonly used for bulk cargo, oversized or overweight shipments.</p>
+
+			<p>If the freight is containerized and delivered only to the terminal, use <a href="/99_cip">CIP</a> instead.&nbsp;If using CIP instead, insurance coverage defaults to all-risk; however, the parties may negotiate a lower coverage requirement.</p>
+
+
+			<h2 class="govuk-heading-m">Seller’s Obligations
+			</h2>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li>Goods, commercial invoice and documentation</li>
+				<li>Export packaging and marking</li>
+				<li>Export licenses and customs formalities</li>
+				<li>Pre-carriage and delivery</li>
+				<li>Loading charges</li>
+				<li>Delivery at named port of destination</li>
+				<li>Proof of delivery</li>
+				<li>Cost of pre-shipment inspection</li>
+				<li>Minimum insurance coverage</li>
+			</ul>
+
+			<h2 class="govuk-heading-m">Buyer’s Obligations
+			</h2>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li>Payment for goods as specified in sales contract</li>
+				<li>Discharge and onward carriage</li>
+				<li>Import formalities and duties</li>
+				<li>Cost of import clearance pre-shipment inspection</li>
+			</ul>
+
+			{{ govukButton({
                 text: "Start again",
                 href: "/mode_of_transport"
             }) }}
-            {% include "includes/logic.html" %}
-        </div>
-    </div>
+			{% include "includes/logic.html" %}
+		</div>
+	</div>
 
 {% endblock %}
